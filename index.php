@@ -1,4 +1,3 @@
 <?php
-echo "hola";
-echo "Prueba2";
-echo "alkjgfq";
+//Formulario que inluya los campos de nombre,apellidos,direccion,email,provincia,codigo postal,
+//telefono, email, password y web
