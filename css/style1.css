@@ -1,6 +1,7 @@
 html{
     background-image: linear-gradient(#dea367, #d09ea6);
     height: 100%;
+    font-family: "Verdana";
 }
 .Formulario {
     background-color: white;
