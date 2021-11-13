@@ -1,0 +1,64 @@
+html{
+    background-image: linear-gradient(#dea367, #d09ea6);
+    height: 100%;
+}
+.Formulario {
+    background-color: white;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px grey;
+    padding-bottom: 2%;
+
+}
+h1,h2{
+    text-align: center;
+}
+h1{
+    padding-top: 5%;
+}
+.Inputs input{
+    margin-left: 15%;
+    width: 62%;
+    font-size: 25px;
+    margin-bottom: 5%;
+    padding: 3%;
+}
+.Next{
+    width: 30%;
+    font-size: 30px;
+    background-color: #12ad5e;
+    color: white;
+    padding: 2% 0;
+    margin-left: 35%;
+    margin-top: 2%;
+    border: transparent;
+}
+.Numeros{
+    margin-left: 30%;
+    margin-top: 1%;
+}
+.pagina{
+    background-color: white;
+    font-size: 30px;
+    padding: 0.5% 1.25%;
+    border-radius: 5px;
+}
+.lineas{
+    width: 100px;
+    height: 10px;
+    padding: 0.01% 11.6%;
+    margin-left: -4px;
+    background-color: white;
+}
+.Titulos{
+    margin-top: 10px;
+    margin-left: 27%;
+}
+.Titulos > span{
+    color: white;
+    font-size: 20px;
+    padding-right: 12%;
+}
+
+
