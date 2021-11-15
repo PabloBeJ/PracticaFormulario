@@ -22,7 +22,7 @@
         <span>ACCOUNT SUMMARY</span>
     </div>
     <div class="Formulario">
-        <h1>CREATE YOUR ACCOUNT</h1>
+        <h1>CREATE YOUR ACCOUNT</h1>pruebas
         <h2>Step 1</h2>
         <div class="Inputs">
             <input type="text" placeholder="Nombre" name="nombre"><br>

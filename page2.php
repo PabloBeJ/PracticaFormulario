@@ -28,7 +28,6 @@ foreach ($meses as $numero => $valor){
     <title>Document</title>
 </head>
 <body class="pagina2">
-<<<<<<< HEAD
 <div class="Numeros">
     <span class="pagina" style="background-color:#12ad5e; color: white">1</span>
     <span class="lineas" style="background-color:#12ad5e;"></span>
