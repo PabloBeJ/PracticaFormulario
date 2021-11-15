@@ -1,8 +1,11 @@
+html{
+    height: 100%;
+}
 body{
     background-image: linear-gradient(#dea367, #d09ea6);
-    height: 100%;
     font-family: "Verdana";
 }
+
 .Formulario {
     background-color: white;
     margin-left: 30%;
@@ -44,7 +47,6 @@ h1{
     color: white;
     padding: 2% 0;
     margin-left: 35%;
-    margin-top: 2%;
     border: transparent;
 }
 .Numeros{
@@ -82,5 +84,4 @@ img{
     background-image: linear-gradient(#95e4d1, #83cc97);
     height: 100%;
     font-family: "Verdana";
-    margin-bottom: 1500px;
 }

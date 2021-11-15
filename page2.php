@@ -26,7 +26,7 @@
     <span>ACCOUNT SUMMARY</span>
 </div>
 <div class="Formulario">
-    <h1>CREATE YOUR ACCOUNT</h1>
+    <h1>CREATE YOUR ACCOUNT</h1>asdada
     <h2>Step 2</h2>
     <img src="img/Espana.jpg" ; alt="Mapa de Espana">
     <div class="Inputs2">
