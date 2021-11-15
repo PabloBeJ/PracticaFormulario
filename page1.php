@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Práctica Formulario</title>
-    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <div class="Numeros">
@@ -25,13 +25,17 @@
         <h1>CREATE YOUR ACCOUNT</h1>
         <h2>Step 1</h2>
         <div class="Inputs">
-            <input type="text" placeholder="Nombre..." name="nombre"><br>
-            <input type="text" placeholder="Apellidos..." name="apellidos"><br>
-            <input type="text" placeholder="Email..." name="email"><br>
-            <input type="text" placeholder="Telefono..." name="telefono"><br>
-            <input type="password" placeholder="Contraseña..." name="password"><br>
+            <input type="text" placeholder="Nombre" name="nombre"><br>
+            <input type="text" placeholder="Apellidos" name="apellidos"><br>
+            <input type="text" placeholder="Email" name="email"><br>
+            <input type="text" placeholder="Teléfono" name="telefono"><br>
+            <input type="password" placeholder="Contraseña" name="password"><br>
+            <!-- Ponemos Confirmar Contraseña -->
         </div>
-        <input class="Next" type="submit" value="Next" name="next">
+        <a href="page2.php" methods="GET">
+        <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer">
+
+        </a>
     </div>
 
 </body>
