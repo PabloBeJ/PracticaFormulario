@@ -34,7 +34,6 @@
         </div>
         <a href="page2.php" methods="GET">
         <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer">
-
         </a>
     </div>
 
