@@ -1,5 +1,5 @@
-01;Álava;	
-02;Albacete;
+01;Álava
+02;Albacete
 03;Alicante;
 04;Almería;
 05;Ávila;
