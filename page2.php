@@ -1,7 +1,6 @@
 <?php
 //Formulario que incluya lso campos de dirección,+
 //ciudad, provincia, codigo postal, y web
-<<<<<<< HEAD
 $meses = [];
 $string = file_get_contents("fichero/ProvinciasEspana.txt");
 $array = explode("\n",$string);
@@ -17,8 +16,6 @@ foreach ($meses as $numero => $valor){
     echo $valor['id'];
         echo $valor['provincia'];
 }
-=======
->>>>>>> origin/main
 ?>
 <!doctype html>
 <html lang="en">
