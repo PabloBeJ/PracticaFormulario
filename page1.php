@@ -29,7 +29,7 @@
             <input type="text" placeholder="Apellidos" name="apellidos"><br>
             <input type="text" placeholder="Email" name="email"><br>
             <input type="text" placeholder="Telefono" name="telefono"><br>
-            <input type="text" placeholder="Contraseña" name="password"><br>
+            <input type="password" placeholder="Contraseña" name="password"><br>
         </div>
         <input class="Next" type="submit" value="Next" name="next">
     </div>
