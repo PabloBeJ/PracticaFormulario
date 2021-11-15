@@ -16,7 +16,7 @@
     <div class="Numeros">
         <span class="pagina" style="background-color:#12ad5e; color: white">1</span>
         <span class="lineas" style="background-color:#12ad5e;"></span>
-        <span class="pagina" style="background-color:#12ad5e; color: white"">2</span>
+        <span class="pagina" style="background-color:#12ad5e; color: white" ;">2</span>
         <span class="lineas"></span>
         <span class="pagina">3</span>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="botones">
             <form action="page3.php" methods="GET">
-                <a class="Back" href="page1.php" methods="GET" style="cursor: pointer; margin-left: 15%; padding: 2% 5%;">BACK </a>
+                <a class="Back" href="page1.php" methods="GET" style="cursor: pointer; margin-left: 15%; padding: 2% 5%; text-decoration: none;">BACK </a>
                 <a href="page2.php" methods="GET">
                 <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer;  margin-left: 15%;"></a>
                 </a>

@@ -42,7 +42,7 @@
     </div>
     <div class="botones">
         <form action="page3.php" methods="GET">
-            <a class="Back" href="page2.php" methods="GET" style="cursor: pointer; margin-left: 15%; padding: 2% 5%;">BACK </a>
+            <a class="Back" href="page2.php" methods="GET" style="cursor: pointer; margin-left: 15%; padding: 2% 5%; text-decoration: none;">BACK </a>
             <a href="page2.php" methods="GET">
                 <input class="Next" type="submit" value="Finish" name="finish" style="cursor: pointer;  margin-left: 15%;"></a>
             </a>
