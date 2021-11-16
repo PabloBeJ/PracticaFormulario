@@ -8,7 +8,7 @@
     <title>Práctica Formulario</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body class="pagina1">
     <div class="Numeros">
         <span class="pagina" style="background-color:#12ad5e; color: white">1</span>
         <span class="lineas"></span>
@@ -22,11 +22,11 @@
         <span>ACCOUNT SUMMARY</span>
     </div>
     <div class="Formulario">
-        <h1>CREATE YOUR ACCOUNT</h1>pruebas
+        <h1>CREATE YOUR ACCOUNT</h1>
         <h2>Step 1</h2>
         <div class="Inputs">
             <input type="text" placeholder="Nombre" name="nombre"><br>
-            <input type="text" placeholder="Apellidos" name="apellidos"><br>
+            <input type="text" placeholder="Apellido" name="apellido"><br>
             <input type="text" placeholder="Email" name="email"><br>
             <input type="text" placeholder="Teléfono" name="telefono"><br>
             <input type="password" placeholder="Contraseña" name="password"><br>
