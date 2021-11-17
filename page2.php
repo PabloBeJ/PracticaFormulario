@@ -22,7 +22,6 @@ foreach ($meses as $numero => $valor){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Document</title>
@@ -41,7 +40,7 @@ foreach ($meses as $numero => $valor){
     <span>ACCOUNT SUMMARY</span>
 </div>
 <div class="Formulario">
-    <h1>CREATE YOUR ACCOUNT</h1>
+    <h1>Add Extra Data</h1>
     <h2>Step 2</h2>
     <img src="img/Espana.jpg" ; alt="Mapa de Espana">
     <div class="Inputs2">
