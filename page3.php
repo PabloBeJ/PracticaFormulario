@@ -5,8 +5,18 @@ $hola = "Pablo";
 if(isset($_GET['finish'])){
     $fichero = fopen("fichero/archivo.txt", "w");
     fwrite($fichero, "Nombre: $hola" . PHP_EOL);
+    fwrite($fichero, "Apellido: $hola" . PHP_EOL);
+    fwrite($fichero, "Email: $hola" . PHP_EOL);
+    fwrite($fichero, "Telefono: $hola" . PHP_EOL);
+    fwrite($fichero, "Password: $hola" . PHP_EOL);
+    fwrite($fichero, "Provincia: $hola" . PHP_EOL);
+    fwrite($fichero, "Ciudad: $hola" . PHP_EOL);
+    fwrite($fichero, "CP: $hola" . PHP_EOL);
+    fwrite($fichero, "Calle: $hola" . PHP_EOL);
+    fwrite($fichero, "Web: $hola" . PHP_EOL);
     fclose($fichero);
-    //echo "hola";
+    echo '<script>alert("Datos guardados en la base de datos.\nPulsa en descargar para ver tus datos.");
+        document.getElementById()</script>';
 }
 
 ?>
@@ -49,9 +59,9 @@ if(isset($_GET['finish'])){
         </div>
         <div class="botones">
             <form method="get" name="formFinal">
-                <a href="page2.php" class="Back" style="cursor: pointer; margin-left: 15%; padding: 2% 5%; text-decoration: none">Back</a>
-                <input class="Next" type="submit" value="Finish" name="finish"  style="cursor: pointer;  margin-left: 15%;">
-                <a href="fichero/archivo.txt" download="fichero/archivo.txt">aaa </a>
+                <a href="page2.php" class="Back" style="cursor: pointer; margin-left: 15%; padding: 2% 3%; text-decoration: none">Back</a>
+                <input class="Next" type="submit" value="Guardar" name="finish"  style="cursor: pointer; margin-left: 1%">
+                <a href="fichero/archivo.txt" id=class="Descargar" download="fichero/archivo.txt" style="padding: 2% 3%;  margin-left: 1%; ">Descargar </a>
             </form>
         </div>
     </div>
