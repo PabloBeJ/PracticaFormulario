@@ -1,5 +1,19 @@
 <?php
 //Formulario que inluya los campos de nombre,apellidos,email , telfono y contraseña(doble confirmacion)
+$_SESSION['telf'] = null;
+$paramNum= "";
+session_start();
+if(isset($_GET['next'])){
+
+    $_SESSION['telf']= $_GET['telefono'];
+
+    if(!preg_match("/[0-9]/",   $_SESSION['telf'])){
+        echo '<script> alert("Errrror Inserta un numero")</script>';
+    }else {
+        echo $_SESSION['telf'];
+    }
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,17 +38,15 @@
     <div class="Formulario">
         <h1>CREATE YOUR ACCOUNT</h1>
         <h2>Step 1</h2>
-        <div class="Inputs">
+        <form name="formUser" method="get" class="Inputs" ac>
             <input type="text" placeholder="Nombre" name="nombre"><br>
             <input type="text" placeholder="Apellido" name="apellido"><br>
             <input type="text" placeholder="Email" name="email"><br>
-            <input type="text" placeholder="Teléfono" name="telefono"><br>
+            <input type="number" placeholder="Teléfono" name="telefono"><br>
             <input type="password" placeholder="Contraseña" name="password"><br>
             <!-- Ponemos Confirmar Contraseña -->
-        </div>
-        <a href="page2.php" methods="GET">
-        <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer">
-        </a>
+            <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer">
+        </form>
     </div>
 
 </body>
