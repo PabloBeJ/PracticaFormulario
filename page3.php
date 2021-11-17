@@ -1,15 +1,14 @@
 <?php
 //Formulario que muestre los datos de los anteriores formularios
 // no soy robot, mensaje de confirmacion y descargar fcihero con datos
-
+$hola = "Pablo";
 if(isset($_GET['finish'])){
-
     $fichero = fopen("fichero/archivo.txt", "w");
-    fwrite($fichero, "Esto es una nueva linea de texto" . PHP_EOL);
+    fwrite($fichero, "Nombre: $hola" . PHP_EOL);
     fclose($fichero);
     //echo "hola";
-
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,7 +36,7 @@ if(isset($_GET['finish'])){
         <h1>PROFILE SUMMARY</h1>
         <h2>Step 3</h2>
         <div class="Inputs3">
-            Nombre: <input type="text" name="nombre" value="hola" style="width:20%; margin-right: 10%" disabled>
+            Nombre: <input type="text" name="nombre" value="<?php echo $hola  ?>" style="width:20%; margin-right: 10%" disabled>
             Apellido: <input type="text" name="apellido" disabled><br>
             Email: <input type="text" name="email" disabled>
             Telefono: <input type="text" name="telefono" style="width:23%" disabled><br>
