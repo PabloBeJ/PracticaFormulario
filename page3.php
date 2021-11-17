@@ -1,20 +1,13 @@
 <?php
 //Formulario que muestre los datos de los anteriores formularios
 // no soy robot, mensaje de confirmacion y descargar fcihero con datos
+
 if(isset($_GET['finish'])){
-    $fichero = "datos.txt";
-    $aceptar = null;
-    echo "<script>
-        window.confirm('¿Quieres descargar un documento con tus datos?')
-        </script>";
 
-
-        // Abre el fichero para obtener el contenido existente
-        $actual = file_get_contents($fichero);
-        // Añade una nueva persona al fichero
-        $actual.= "hola";
-        // Escribe el contenido al fichero
-        file_put_contents($fichero,$actual);
+    $fichero = fopen("fichero/archivo.txt", "w");
+    fwrite($fichero, "Esto es una nueva linea de texto" . PHP_EOL);
+    fclose($fichero);
+    //echo "hola";
 
 }
 ?>
@@ -44,21 +37,22 @@ if(isset($_GET['finish'])){
         <h1>PROFILE SUMMARY</h1>
         <h2>Step 3</h2>
         <div class="Inputs3">
-            Nombre :<input type="text" name="nombre" style="width:20%; margin-right: 10%" disabled>
-            Apellido :<input type="text" name="apellido" disabled><br>
-            Email :<input type="text" name="email" disabled>
-            Telefono :<input type="text" name="telefono" style="width:23%" disabled><br>
-            Password :<input type="text" name="password" style="width:18%; margin-right: 10%" disabled>
-            Provincia :<input type="text" name="provincia" style="width:25%" disabled><br>
-            Ciudad :<input type="text" name="ciudad" style="width:20%; margin-right:11%;" disabled>
-            CP :<input type="text" name="cp" style="width: 15%" disabled><br>
-            Calle :<input type="text" name="calle" disabled>
-            Web :<input type="text" name="web" disabled>
+            Nombre: <input type="text" name="nombre" value="hola" style="width:20%; margin-right: 10%" disabled>
+            Apellido: <input type="text" name="apellido" disabled><br>
+            Email: <input type="text" name="email" disabled>
+            Telefono: <input type="text" name="telefono" style="width:23%" disabled><br>
+            Password: <input type="text" name="password" style="width:18%; margin-right: 10%" disabled>
+            Provincia: <input type="text" name="provincia" style="width:25%" disabled><br>
+            Ciudad: <input type="text" name="ciudad" style="width:20%; margin-right:11%;" disabled>
+            CP: <input type="text" name="cp" style="width: 15%" disabled><br>
+            Calle: <input type="text" name="calle" value="micalle" disabled>
+            Web: <input type="text" name="web" disabled>
         </div>
         <div class="botones">
-            <form method="Get" name="formulario">
-                <a class="Back" href="page2.php"  style="cursor: pointer; margin-left: 15%; padding: 2% 5%; text-decoration: none">BACK </a>
-                <input class="Next" type="submit" value="Finish" name="finish" style="cursor: pointer;  margin-left: 15%;"></a>
+            <form method="get" name="formFinal">
+                <a href="page2.php" class="Back" style="cursor: pointer; margin-left: 15%; padding: 2% 5%; text-decoration: none">Back</a>
+                <input class="Next" type="submit" value="Finish" name="finish"  style="cursor: pointer;  margin-left: 15%;">
+                <a href="fichero/archivo.txt" download="fichero/archivo.txt">aaa </a>
             </form>
         </div>
     </div>

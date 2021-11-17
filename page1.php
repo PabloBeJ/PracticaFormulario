@@ -8,7 +8,7 @@ if(isset($_GET['next'])){
     $_SESSION['telf']= $_GET['telefono'];
 
     if(!preg_match("/[0-9]/",   $_SESSION['telf'])){
-        echo '<script> alert("Errrror Inserta un numero")</script>';
+        echo '<script> alert("Error en el telefono : Inserta un numero")</script>';
     }else {
         echo $_SESSION['telf'];
     }
