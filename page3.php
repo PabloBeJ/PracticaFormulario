@@ -2,10 +2,11 @@
 //Formulario que muestre los datos de los anteriores formularios
 // no soy robot, mensaje de confirmacion y descargar fcihero con datos
 $hola = "Pablo";
+$adios = "horcajada";
 if(isset($_GET['finish'])){
     $fichero = fopen("fichero/archivo.txt", "w");
     fwrite($fichero, "Nombre: $hola" . PHP_EOL);
-    fwrite($fichero, "Apellido: $hola" . PHP_EOL);
+    fwrite($fichero, "Apellido: $adios" . PHP_EOL);
     fwrite($fichero, "Email: $hola" . PHP_EOL);
     fwrite($fichero, "Telefono: $hola" . PHP_EOL);
     fwrite($fichero, "Password: $hola" . PHP_EOL);
