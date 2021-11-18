@@ -50,7 +50,7 @@ if(isset($_GET['next'])){
     <h1>Add Extra Data</h1>
     <h2>Step 2</h2>
     <img src="img/Espana.jpg" ; alt="Mapa de Espana">
-    <form name="formUser" method="get" class="Inputs2">
+    <form name="formUser" method="get" class="Inputs2" action="page3.php">
         <input type="text" placeholder="Provincia" name="provincia" readonly value="">
         <input type="" placeholder="Ciudad" name="ciudad">
         <select name="ciudad" id="ciudad">
