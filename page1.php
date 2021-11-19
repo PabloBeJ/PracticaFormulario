@@ -45,7 +45,8 @@ if(isset($_GET['nextpag2'])){
         echo '<script> alert("Error en el telefono Inserta un numero")</script>';
     }
     if(!preg_match($paramContra, $_SESSION['passwd'])){
-        echo '<script> alert("Error en la Contraseña inserta al menos un caracter minuscula , una mayuscula, numero")</script>';
+        echo '<script> alert("Error en la Contraseña. Debe tener entre 8 y 16 caracateres y " +
+    "al menos un caracter minuscula , una mayuscula, numero y algo que no sea ni numero ni letra")</script>';
     }
     if($_SESSION['passwd'] != $_SESSION['confPasswd'] || $_SESSION['passwd'] == null){
         echo "No son iguales";
@@ -94,7 +95,7 @@ if(isset($_GET['nextpag2'])){
         <form name="formUser" method="get" class="Inputs"   >
             <input type="text" placeholder="Nombre" name="nombre"><br>
             <input type="text" placeholder="Apellido" name="apellido"><br>
-            <input type="text" placeholder="Email" name="correo"><br>
+            <input type="email" placeholder="Email" name="correo"><br>
             <input type="text" placeholder="Teléfono" name="telefono"><br>
             <input type="password" placeholder="Contraseña" name="contrasena"><br>
             <input type="password" placeholder="Confirmar Contraseña" name="confContrasena"><br>
