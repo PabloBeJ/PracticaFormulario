@@ -4,6 +4,9 @@
 $provincias = [];
 $string = file_get_contents("fichero/ProvinciasEspana.txt");
 $array = explode("\n",$string);
+
+$paramWeb= '/www.+[-0-9a-zA-Z.+_].[a-zA-Z]{2,4}/';
+$paramString = '/^[a-zA-Z -]+$/';
 foreach ($array as $key => $row){
     $item = explode(";",$row);
     $provincias[] = [
@@ -15,7 +18,7 @@ foreach ($provincias as $numero => $valor){
     echo $valor['id'];
         echo $valor['provincia'];
 }
-if(isset($_GET['next'])){
+if(isset($_GET['nextpag3'])){
     $_SESSION['CodigoP']= $_GET['cp'];
     if(!preg_match("/[0-9]/",   $_SESSION['CodigoP'])){
         echo '<script> alert("Errrror Inserta un numero")</script>';
@@ -61,7 +64,7 @@ if(isset($_GET['next'])){
         <input style="margin-left: 25%" type="number" placeholder="Código Postal" name="cp" value="28" >
         <input type="text" placeholder="Web" name="web">
             <a class="Next" href="page1.php" methods="GET" style=" margin-left: 15%; padding: 2% 5%; text-decoration: none;">BACK </a>
-        <input class="Next" type="submit" value="Next" name="next" style="cursor: pointer; padding: 2% 5%; font-size: 30px; margin-left: 20%;">
+        <input class="Next" type="submit" value="Next" name="nextpag3" style="cursor: pointer; padding: 2% 5%; font-size: 30px; margin-left: 20%;">
     </form>
 </div>
 </body>

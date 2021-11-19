@@ -19,7 +19,6 @@ if(isset($_GET['finish'])){
     echo '<script>alert("Datos guardados en la base de datos.\nPulsa en descargar para ver tus datos.");
         document.getElementById()</script>';
 }
-
 ?>
 <!doctype html>
 <html lang="en">
