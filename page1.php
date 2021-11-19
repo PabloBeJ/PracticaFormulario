@@ -10,6 +10,7 @@ $paramContra= '/^(?=.*[^A-Za-z0-9])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/';
 $paramCorreo= '/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/';
 // Inicion la sesión
 session_start();
+$nombre = null;
 // Boton para reiniciar
 if (isset($_GET['reiniciar'])) {
     //Al reiniciar quito todas las sesiones acumuladas
@@ -65,7 +66,11 @@ if(isset($_GET['nextpag2'])){
             'contrasena' =>  $_SESSION['passwd']
         ];
         //Imprime el array
-        print_r( $_SESSION['infoForm']);
+         print_r($_SESSION['infoForm']);
+         $nombre = $_SESSION['infoForm']['nombre'];
+
+
+
     }
 }
 ?>
@@ -104,6 +109,7 @@ if(isset($_GET['nextpag2'])){
         <form name="reiniciar">
         <input class="Next" type="submit" value="Reset" name="reiniciar" style="cursor: pointer; margin-left: 40%">
         </form>
+         <a href="page3.php?nombre=<?php echo $nombre ?>">Hola</a>
     </div>
 </body>
 </html>
