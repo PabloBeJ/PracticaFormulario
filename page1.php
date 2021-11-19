@@ -1,7 +1,7 @@
 <?php
 //Formulario que inluya los campos de nombre,apellidos,email , telfono y contraseña(doble confirmacion)
-//Parametro String --> Acepta solo caracteres
-$paramString = '/^[a-zA-Z -]+$/';
+//Parametro String --> Acepta solo caracteres y palabras con tíldes
+$paramString = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ]+$/';
 // Solo se puede números y que el mínimo sea de 8 dígitos
 $paramNum= '/[0-9].{8,}/';
 //Parametros para que conteunga un numero,mayuscula,minuscula, caracter especial y que el rango sea entre de 8-16 caracteres
