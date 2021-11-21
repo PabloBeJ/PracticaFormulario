@@ -29,17 +29,20 @@ if(isset($_GET['id'])){
     $correo =  $formCompletado['correo'];
     $telefono = $formCompletado['telefono'];
     $contra = $formCompletado['contrasena'];
+    $provincia = $formCompletado['provincia'];
+    $ciudad = $formCompletado['ciudad'];
+    $cp = $formCompletado['cp'];
+    $web = $formCompletado['web'];
     $fichero = fopen("fichero/archivo.txt", "w");
     fwrite($fichero, "Nombre:  $fnombre" . PHP_EOL);
     fwrite($fichero, "Apellido: $apellido" . PHP_EOL);
     fwrite($fichero, "Email: $correo" . PHP_EOL);
     fwrite($fichero, "Telefono:  $telefono" . PHP_EOL);
     fwrite($fichero, "Password:  $contra "  . PHP_EOL);
-    fwrite($fichero, "Provincia: $hola" . PHP_EOL);
-    fwrite($fichero, "Ciudad: $hola" . PHP_EOL);
-    fwrite($fichero, "CP: $hola" . PHP_EOL);
-    fwrite($fichero, "Calle: $hola" . PHP_EOL);
-    fwrite($fichero, "Web: $hola" . PHP_EOL);
+    fwrite($fichero, "Provincia: $provincia" . PHP_EOL);
+    fwrite($fichero, "Ciudad: $ciudad" . PHP_EOL);
+    fwrite($fichero, "CP: $cp" . PHP_EOL);
+    fwrite($fichero, "Web: $web" . PHP_EOL);
     fclose($fichero);
 }
 ?>
@@ -67,7 +70,6 @@ if(isset($_GET['id'])){
         Provincia: <input type="text" name="provincia" style="width:25%" disabled><br>
         Ciudad: <input type="text" name="ciudad" style="width:20%; margin-right:11%;" disabled>
         CP: <input type="text" name="cp" style="width: 15%" disabled><br>
-        Calle: <input type="text" name="calle" value="micalle" disabled>
         Web: <input type="text" name="web" disabled>
     </div>
     <div class="botones">

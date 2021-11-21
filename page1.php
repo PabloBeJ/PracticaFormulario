@@ -81,6 +81,7 @@ if (isset($_GET['nextpag2'])) {
                 'telefono' => $_SESSION['telef'],
                 'contrasena' => $_SESSION['passwd']]
         ];
+
     }
 }
 ?>
@@ -110,31 +111,31 @@ if (isset($_GET['nextpag2'])) {
     <h2>Step 1</h2>
     <form name="formUser" method="get" class="Inputs" onclick="validateForm()">
         <label class="errores" id="errorNombre" ></label><br>
-        <input type="text" id="nombre" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION['fName'] ?>"><br>
+        <input type="text" id="nombre" placeholder="Nombre..." name="nombre" value="<?php echo $_SESSION['fName'] ?>"><br>
 
         <label class="errores" id="errorApellido"> </label><br>
-        <input type="text" id="apellido" placeholder="Apellidos" name="apellido"
+        <input type="text" id="apellido" placeholder="Apellidos.." name="apellido"
                value="<?php echo $_SESSION['lName'] ?>"><br>
 
         <label class="errores" id="errorCorreo"> </label><br>
-        <input type="email" id="correo" placeholder="Email" name="correo" value="<?php echo $_SESSION['email'] ?>"><br>
+        <input type="email" id="correo" placeholder="Email..." name="correo" value="<?php echo $_SESSION['email'] ?>"><br>
 
         <label class="errores" id="errorTelef" > </label><br>
-        <input type="text" id="telefono" placeholder="Teléfono" name="telefono"
+        <input type="text" id="telefono" placeholder="Teléfono..." name="telefono"
                value="<?php echo $_SESSION['telef'] ?>"><br>
 
         <label class="errores" id="errorContraPart1"> </label><br>
         <label class="errores" id="errorContraPart2"> </label><br>
-        <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena"
+        <input type="password" id="contrasena" placeholder="Contraseña..." name="contrasena"
                value="<?php echo $_SESSION['passwd'] ?>"><br>
 
         <label class="errores" id="errorConfContra" > </label><br>
-        <input type="password" id="confContrasena" placeholder="Confirmar Contraseña" name="confContrasena"
+        <input type="password" id="confContrasena" placeholder="Confirmar Contraseña..." name="confContrasena"
                value="<?php echo $_SESSION['confPasswd'] ?>"><br>
         <input class="Next" type="submit" value="Comprobar" name="nextpag2" style="width: 20%; margin-left: 24%">
         <form name="reiniciar">
             <input class="Next" type="submit" value="Reset" name="reiniciar" style="width: 20%;margin-left: 10%">
-            <a href="page2.php?id=<?php echo 0 ?>" id="next" class="Next"  value="Reset" style=";padding:2%;  margin-left: 43%;visibility: hidden;">Next</a>
+            <a href="page2.php?id=<?php echo 0 ?>" id="next" class="Next" style=";padding:2%;  margin-left: 43%;visibility: hidden;">Next</a>
         </form>
     </form>
 
