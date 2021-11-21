@@ -14,7 +14,6 @@
 // no soy robot, mensaje de confirmacion y descargar fcihero con datos
 session_start();
 
-
 $fnombre = "";
 $apellido = "";
 $correo =  "";
