@@ -42,7 +42,8 @@ if(isset($_GET['nextpag3'])){
     <meta name="viewport"
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Document</title>
+    <title>Práctica Formulario parte 2</title>
+    <script src="script/script.js" type="text/javascript"></script>
 </head>
 <body class="pagina2">
 <div class="Numeros">

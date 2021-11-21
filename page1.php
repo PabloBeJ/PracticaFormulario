@@ -1,7 +1,7 @@
 <?php
 //Formulario que inluya los campos de nombre,apellidos,email , telfono y contraseña(doble confirmacion)
 //Parametro String --> Acepta solo caracteres y palabras con tíldes
-$paramString = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ]+$/';
+$paramString = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ s]+$/';
 // Solo se puede números y que el mínimo sea de 8 dígitos
 $paramNum = '/[0-9].{8,}/';
 //Parametros para que conteunga un numero,mayuscula,minuscula, caracter especial y que el rango sea entre de 8-16 caracteres
@@ -33,29 +33,46 @@ if (isset($_GET['nextpag2'])) {
     // Array vacio
     $_SESSION['infoForm'] = [];
     //Si no coincide con el pregmatch mostrará los errores correspondiendtes de cada apartado
+    ?>    <div class="invisible">
+            <?php
     if (!preg_match($paramString, $_SESSION['fName'])) {
-        echo '<script> alert("Error escribe un nombre válido")</script>';
+       ?>
+        <input id="checknombre" value="error">
+<?php
     }
     if (!preg_match($paramString, $_SESSION['lName'])) {
-        echo '<script> alert("Error escribe un Apellido válido")</script>';
+        ?>
+        <input id="checkApellido">
+        <?php
     }
     if (!preg_match($paramCorreo, $_SESSION['email'])) {
-        echo '<script> alert("Error en el Correo Inserta un correo válido")</script>';
+        ?>
+        <input id="checkCorreo">
+        <?php
     }
     if (!preg_match($paramNum, $_SESSION['telef'])) {
-        echo '<script> alert("Error en el telefono Inserta un numero")</script>';
+     //   echo '<script> alert("Error en el telefono Inserta un numero")</script>';
+        ?>
+        <input id="checkTelef">
+        <?php
     }
     if (!preg_match($paramContra, $_SESSION['passwd'])) {
-        echo '<script> alert("Error en la Contraseña. Debe tener entre 8 y 16 caracateres y " +
-    "al menos un caracter minuscula , una mayuscula, numero y algo que no sea ni numero ni letra")</script>';
+     //   echo '<script> alert("Error en la Contraseña. Debe tener entre 8 y 16 caracateres y " +  "al menos un caracter minuscula , una mayuscula, numero y algo que no sea ni numero ni letra")</script>';
+        ?>
+        <input id="checkContra">
+        <?php
     }
     if ($_SESSION['passwd'] != $_SESSION['confPasswd'] || $_SESSION['passwd'] == null) {
-        echo "No son iguales";
+        ?>
+        <input id="checkConfirContra">
+        <?php
     }
+    ?> </div>
+    <?php
     //Si toooodo esta bien se acumula en un array
     if (preg_match($paramString, $_SESSION['fName']) && preg_match($paramString, $_SESSION['lName']) && preg_match($paramCorreo, $_SESSION['email']) &&
         preg_match($paramContra, $_SESSION['passwd'])) {
-        echo '<script> alert("Datos introducidos Correctamente")</script>';
+     //   echo '<script> alert("Datos introducidos Correctamente")</script>';
         // page2.php?nombre=adas&apellido=sada&correo=asda&telefono=asd&contrasena=asd&confContrasena=asd&nextpag2=Next
         //header(" Location: page2.php?");
         $_SESSION['infoForm'] = [
@@ -69,6 +86,9 @@ if (isset($_GET['nextpag2'])) {
         print_r($_SESSION['infoForm']);
         $nombre = $_SESSION['infoForm']['nombre'];
     }
+}else{
+    ?>
+    <input id="checknombre" value="verdadero"> <?php
 }
 ?>
 <!doctype html>
@@ -77,6 +97,7 @@ if (isset($_GET['nextpag2'])) {
     <meta charset="UTF-8">
     <title>Práctica Formulario</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="script/script.js" type="text/javascript"></script>
 </head>
 <body class="pagina1">
 <div class="Numeros">
@@ -94,9 +115,9 @@ if (isset($_GET['nextpag2'])) {
 <div class="Formulario" id="0">
     <h1>CREATE YOUR ACCOUNT</h1>
     <h2>Step 1</h2>
-    <form name="formUser" method="get" class="Inputs">
-        <input type="text" placeholder="Nombre" name="nombre"><br>
-        <input type="text" placeholder="Apellido" name="apellido"><br>
+    <form name="formUser" method="get" class="Inputs" onclick="validateForm()">
+        <input type="text" id="nombrej" placeholder="Nombre" name="nombre"><br>
+        <input type="text" placeholder="Apellidos" name="apellido"><br>
         <input type="email" placeholder="Email" name="correo"><br>
         <input type="text" placeholder="Teléfono" name="telefono"><br>
         <input type="password" placeholder="Contraseña" name="contrasena"><br>
