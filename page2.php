@@ -34,6 +34,23 @@ if(isset($_GET['nextpag3'])){
         echo '<script> alert("Errrror Inserta una web valida")</script>';
     }
 }
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $formCompletado = $_SESSION['infoForm'][$id];
+    $formCompletado = [
+        'nombre' =>$formCompletado['nombre'],
+        'apellidos' => $formCompletado['apellidos'],
+        'correo' => $formCompletado['correo'],
+        'telefono' => $formCompletado['telefono'],
+        'contrasena' => $formCompletado['contrasena'],
+        'provincia' => "Madrid",
+        'ciudad' => $_SESSION['Fciudad'],
+        'cp' => $_SESSION['CodigoCP'],
+        'web' =>  $_SESSION['pagWeb'],
+    ];
+}
+
 ?>
 <!doctype html>
 <html lang="en">

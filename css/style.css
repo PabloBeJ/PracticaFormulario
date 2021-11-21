@@ -64,7 +64,7 @@ h1{
 .Inputs3 > input{
     margin-bottom: 10%;
     width: 30%;
-    font-size: 25px;
+    font-size: 18px;
     margin-right: 20px;
 }
 /*Botones*/
@@ -79,6 +79,7 @@ h1{
     margin-top: 2%;
 /* origin/main*/
     border: transparent;
+    border-radius: 5px;
 }
 .Numeros{
     margin-left: 30%;
