@@ -39,14 +39,17 @@ h1{
 
 /*Inputs*/
 .Inputs input , .Inputs2 input, select  {
-    margin-left: 15%;
-    width: 62%;
+    margin-left: 19%;
+    width: 60%;
     font-size: 25px;
-    margin-bottom: 5%;
-    padding: 3%;
+    padding: 1.5%;
     border: 1px Solid grey;
     border-radius: 5px;
     z-index: 0;
+}
+.errores{
+    margin-left: 18%;
+    color: red;
 }
 .Inputs2 {
     margin-top: 10%;
@@ -69,7 +72,6 @@ h1{
 }
 /*Botones*/
 .Next , .Back , .Descargar{
-    width: 25%;
     font-size: 30px;
     background-color: #12ad5e;
     color: white;
@@ -80,10 +82,12 @@ h1{
 /* origin/main*/
     border: transparent;
     border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5%;
 }
+
 .Numeros{
     margin-left: 30%;
-    margin-top: 1%;
 }
 .pagina{
     background-color: white;

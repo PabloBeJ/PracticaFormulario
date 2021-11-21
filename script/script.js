@@ -37,4 +37,8 @@
         document.getElementById("confContrasena").style.border="1px solid red"
         document.getElementById("errorConfContra").innerText= " Las contrasñas no son iguales"
     }else  {document.getElementById("confContrasena").style.border="4px solid #1fc600"}
+    if(nombre.value!="error"&&apellido.value!="error"&&correo.value!="error"&&telef.value!="error"&&contra.value!="error"&&contra.value!="error"&&confContra.value!="error"){
+        document.getElementById("next").style.visibility = "visible";
+    }
+
     }
