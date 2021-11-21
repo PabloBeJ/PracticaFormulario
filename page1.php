@@ -76,15 +76,13 @@ if (isset($_GET['nextpag2'])) {
         // page2.php?nombre=adas&apellido=sada&correo=asda&telefono=asd&contrasena=asd&confContrasena=asd&nextpag2=Next
         //header(" Location: page2.php?");
         $_SESSION['infoForm'] = [
-            ['nombre' => $_SESSION['fName'],
+            [
+                    'nombre' => $_SESSION['fName'],
                 'apellidos' => $_SESSION['lName'],
                 'correo' => $_SESSION['email'],
                 'telefono' => $_SESSION['telef'],
                 'contrasena' => $_SESSION['passwd']]
         ];
-        //Imprime el array
-        print_r($_SESSION['infoForm']);
-        $nombre = $_SESSION['infoForm']['nombre'];
     }
 }else{
     ?>
