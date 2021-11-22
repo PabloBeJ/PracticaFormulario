@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 //Formulario que inluya los campos de nombre,apellidos,email , telfono y contraseña(doble confirmacion)
 //Parametro String --> Acepta solo caracteres y palabras con tíldes
 $paramString = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ s]+$/';
@@ -43,7 +44,7 @@ if (isset($_GET['nextpag2'])) {
             ?> <input id="checkApellido" value="error">  <?php
         }else echo '<input id="checkApellido" value="verdadero">';
         if (!preg_match($paramCorreo, $_SESSION['email'])) {
-            ?> <input id="checkCorreo" value="error"> <?php
+            ?> <input id="checkCorreo" value="error">  <?php
         }else echo '<input id="checkCorreo" value="verdadero">';
         if (!preg_match($paramNum, $_SESSION['telef'])) {
             ?> <input id="checkTelef" value="error"> <?php
@@ -52,7 +53,7 @@ if (isset($_GET['nextpag2'])) {
             ?> <input id="checkContra" value="error">  <?php
         }else echo '<input id="checkContra" value="verdadero">';
         if ($_SESSION['passwd'] != $_SESSION['confPasswd'] || $_SESSION['passwd'] == null) {
-            ?> <input id="checkConfirContra" value="error"> <?php
+            ?><input id="checkConfirContra" value="error">  <?php
         }else echo '<input id="checkConfirContra" value="verdadero">';
         ?> </div>
     <?php
@@ -67,7 +68,6 @@ if (isset($_GET['nextpag2'])) {
                 'telefono' => $_SESSION['telef'],
                 'contrasena' => $_SESSION['passwd']]
         ];
-
     }
 }
 ?>
@@ -98,17 +98,23 @@ if (isset($_GET['nextpag2'])) {
     <form name="formUser" method="get" class="Inputs" onclick="validateForm()">
         <label class="errores" id="errorNombre" ></label><br>
         <input type="text" id="nombre" placeholder="Nombre..." name="nombre" value="<?php echo $_SESSION['fName'] ?>"><br>
+
         <label class="errores" id="errorApellido"> </label><br>
         <input type="text" id="apellido" placeholder="Apellidos.." name="apellido"
                value="<?php echo $_SESSION['lName'] ?>"><br>
+
         <label class="errores" id="errorCorreo"> </label><br>
         <input type="email" id="correo" placeholder="Email..." name="correo" value="<?php echo $_SESSION['email'] ?>"><br>
+
         <label class="errores" id="errorTelef" > </label><br>
         <input type="text" id="telefono" placeholder="Teléfono..." name="telefono"
+               value="<?php echo $_SESSION['telef'] ?>"><br>
+
         <label class="errores" id="errorContraPart1"> </label><br>
         <label class="errores" id="errorContraPart2"> </label><br>
         <input type="password" id="contrasena" placeholder="Contraseña..." name="contrasena"
                value="<?php echo $_SESSION['passwd'] ?>"><br>
+
         <label class="errores" id="errorConfContra" > </label><br>
         <input type="password" id="confContrasena" placeholder="Confirmar Contraseña..." name="confContrasena"
                value="<?php echo $_SESSION['confPasswd'] ?>"><br>
@@ -118,6 +124,8 @@ if (isset($_GET['nextpag2'])) {
             <a href="page2.php?id=<?php echo 0 ?>" id="next" class="Next" style=";padding:2%;  margin-left: 43%;visibility: hidden;">Next</a>
         </form>
     </form>
+
+
 </div>
 </body>
 </html>
