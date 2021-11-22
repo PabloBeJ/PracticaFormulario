@@ -16,18 +16,14 @@ $_SESSION['CodigoCP'] = null;
 $_SESSION['pagWeb'] = null;
 $_SESSION['validarprovincia'] = "error";
 
-foreach ($array as $key => $row){
-    $item = explode(";",$row);
-    $provincias[] = [
-            'id'=> $item[0],
-            'provincia' => $item[1]
-    ];
-}
+//guardamos el if recibido de page 1 y recuperamos el formulario con los datos
 if(isset($_GET['id'])) {
     $_SESSION['id'] = $_GET['id'];
     $_SESSION['formulario'] = $_SESSION['infoForm'][$_SESSION['id']];
 }
 
+//si hemos pulsado(reicibido) "comprobar,
+//guardamos en sesiones el valor de los inputs
 if(isset($_GET['comprobar'])){
     $_SESSION['Provincia'] = $_GET['provincia'];
     $_SESSION['Fciudad'] = $_GET['ciudad'];
@@ -47,7 +43,6 @@ if(isset($_GET['comprobar'])){
     }else ?> <input id="checkWeb" value="verdadero" style="visibility:  hidden"> <?php
 
     //Comprobamos que el codigopostal y la provincia son correctas
-
     foreach ($provincias as $numero => $valor){
         if($valor['id']==$_SESSION['CodigoCPmini']&&$valor['provincia']==$_SESSION['Provincia']){
             $_SESSION['validarprovincia']="verdadero"; break;
@@ -55,6 +50,7 @@ if(isset($_GET['comprobar'])){
         else $_SESSION['validarprovincia']="error";
     }
 
+    //Añadimos al array formulario los nuevos valores
     $_SESSION['infoForm'][$_SESSION['id']] += ['provincia' =>  $_SESSION['Provincia']];
     $_SESSION['infoForm'][$_SESSION['id']] += ['ciudad' => $_SESSION['Fciudad']];
     $_SESSION['infoForm'][$_SESSION['id']] += ['cp' => $_SESSION['CodigoCP']];
@@ -72,7 +68,7 @@ if(isset($_GET['comprobar'])){
     <title>Document</title>
 </head>
 <body class="pagina2" >
-<input id="checkCP" value="<?php echo $_SESSION['validarprovincia'] ?>" style="visibility: visible">
+<input id="checkCP" value="<?php echo $_SESSION['validarprovincia'] ?>" style="visibility: hidden">
 <div class="Numeros">
     <span class="pagina" style="background-color:#12ad5e; color: white">1</span>
     <span class="lineas" style="background-color:#12ad5e;"></span>

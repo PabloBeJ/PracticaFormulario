@@ -13,7 +13,9 @@ $ciudad = "";
 $cp = "";
 $web = "";
 
+//si hemos recibido/seteado el "id"
 if(isset($_GET['id'])){
+    //guardamos en variables cada valor del formulario
     $id = $_GET['id'];
     $formCompletado = $_SESSION['infoForm'][$id];
     $fnombre =  $formCompletado['nombre'];
@@ -26,7 +28,9 @@ if(isset($_GET['id'])){
     $cp = $formCompletado['cp'];
     $web = $formCompletado['web'];
 
+    //abrimos el fichero y le decimos que vamos a escribir
     $fichero = fopen("fichero/archivo.txt", "w");
+    //añadimos en cada linea un texto y las variables del formulario
     fwrite($fichero, "Nombre:  $fnombre" . PHP_EOL);
     fwrite($fichero, "Apellido: $apellido" . PHP_EOL);
     fwrite($fichero, "Email: $correo" . PHP_EOL);
@@ -84,6 +88,5 @@ if(isset($_GET['id'])){
     </div>
     <br/>
 </div>
-
 </body>
 </html>
