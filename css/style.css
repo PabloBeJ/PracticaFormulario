@@ -85,6 +85,17 @@ h1{
     cursor: pointer;
     margin-bottom: 5%;
 }
+.Next2 {
+    visibility: hidden;
+    margin-left: 1%;
+    padding: 2% 5%;
+    text-decoration: none;
+    background-color: #12ad5e;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
 
 .Numeros{
     margin-left: 30%;

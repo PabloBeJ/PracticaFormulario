@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Document</title>
-</head>
-<body class="pagina3">
-
 <?php
 //Formulario que muestre los datos de los anteriores formularios
 // no soy robot, mensaje de confirmacion y descargar fcihero con datos
@@ -19,7 +8,10 @@ $apellido = "";
 $correo =  "";
 $telefono = "";
 $contra = "";
-$hola = "Pable";
+$provincia = "";
+$ciudad = "";
+$cp = "";
+$web = "";
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -33,6 +25,7 @@ if(isset($_GET['id'])){
     $ciudad = $formCompletado['ciudad'];
     $cp = $formCompletado['cp'];
     $web = $formCompletado['web'];
+
     $fichero = fopen("fichero/archivo.txt", "w");
     fwrite($fichero, "Nombre:  $fnombre" . PHP_EOL);
     fwrite($fichero, "Apellido: $apellido" . PHP_EOL);
@@ -46,6 +39,17 @@ if(isset($_GET['id'])){
     fclose($fichero);
 }
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="pagina3">
 <div class="Numeros">
     <span class="pagina" style="background-color:#12ad5e; color: white">1</span>
     <span class="lineas" style="background-color:#12ad5e;"></span>
@@ -67,10 +71,10 @@ if(isset($_GET['id'])){
         Email: <input type="text" name="email"   value="<?php echo $correo ?>" disabled>
         Telefono: <input type="text" name="telefono" value="<?php echo $telefono ?>"style="width:23%"  disabled><br>
         Password: <input type="password" name="password"  value="<?php echo $contra ?>"style="width:18%; margin-right: 10%" disabled>
-        Provincia: <input type="text" name="provincia" style="width:25%" disabled><br>
-        Ciudad: <input type="text" name="ciudad" style="width:20%; margin-right:11%;" disabled>
-        CP: <input type="text" name="cp" style="width: 15%" disabled><br>
-        Web: <input type="text" name="web" disabled>
+        Provincia: <input type="text" name="provincia" value="<?php echo $provincia ?>" style="width:25%" disabled><br>
+        Ciudad: <input type="text" name="ciudad" value="<?php echo $ciudad ?> "style="width:20%; margin-right:11%;" disabled>
+        CP: <input type="text" name="cp"  value="<?php echo $cp ?>"style="width: 15%" disabled><br>
+        Web: <input type="text" name="web" value="<?php echo $web ?>" disabled>
     </div>
     <div class="botones">
         <form method="get" name="formFinal">

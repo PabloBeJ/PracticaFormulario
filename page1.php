@@ -3,7 +3,7 @@
 //Parametro String --> Acepta solo caracteres y palabras con tíldes
 $paramString = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ s]+$/';
 // Solo se puede números y que el mínimo sea de 8 dígitos
-$paramNum = '/[0-9].{8,}/';
+$paramNum = '/^[0-9]{9,}$/';
 //Parametros para que conteunga un numero,mayuscula,minuscula, caracter especial y que el rango sea entre de 8-16 caracteres
 $paramContra = '/^(?=.*[^A-Za-z0-9])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/';
 // Correo -->  continenen un formato de cualquier tipo + @ contiene cualquier tipo un punto. y un string de 2-4 caracteres (com,es,net)..etc
@@ -53,7 +53,6 @@ if (isset($_GET['nextpag2'])) {
             <?php
         }else echo '<input id="checkCorreo" value="verdadero">';
         if (!preg_match($paramNum, $_SESSION['telef'])) {
-            //   echo '<script> alert("Error en el telefono Inserta un numero")</script>';
             ?>
             <input id="checkTelef" value="error">
             <?php
