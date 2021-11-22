@@ -32,36 +32,40 @@ if (isset($_GET['nextpag2'])) {
     $_SESSION['confPasswd'] = $_GET['confContrasena'];
     // Array vacio
     $_SESSION['infoForm'] = [];
-    //Si no coincide con el pregmatch mostrará los errores correspondiendtes de cada apartado
+    //Creo un Div invisible para todos los inputs del formulario indicque si esta bien o mal
     ?>
     <div class="invisible" style="visibility: hidden">
         <?php
+        //Error/Verdadero para el nombre
         if (!preg_match($paramString, $_SESSION['fName'])) {
             ?>
-
             <input id="checknombre" value="error">
             <?php
         } else echo '<input id="checknombre" value="verdadero">';
+        //Error/Verdadero para el Apellido
         if (!preg_match($paramString, $_SESSION['lName'])) {
             ?>
             <input id="checkApellido" value="error">
             <?php
         }else echo '<input id="checkApellido" value="verdadero">';
+        //Error/Verdadero para el Correo
         if (!preg_match($paramCorreo, $_SESSION['email'])) {
             ?>
             <input id="checkCorreo" value="error">
             <?php
         }else echo '<input id="checkCorreo" value="verdadero">';
+        //Error/Verdadero para el Teléfono
         if (!preg_match($paramNum, $_SESSION['telef'])) {
-            //   echo '<script> alert("Error en el telefono Inserta un numero")</script>';
             ?>
             <input id="checkTelef" value="error">
             <?php
         }else echo '<input id="checkTelef" value="verdadero">';
+        //Error/Verdadero para la Contraseña
         if (!preg_match($paramContra, $_SESSION['passwd'])) {
             ?>
             <input id="checkContra" value="error">
             <?php
+            //Error/Verdadero para Confirmar Contraseña
         }else echo '<input id="checkContra" value="verdadero">';
         if ($_SESSION['passwd'] != $_SESSION['confPasswd'] || $_SESSION['passwd'] == null) {
             ?>
@@ -81,7 +85,6 @@ if (isset($_GET['nextpag2'])) {
                 'telefono' => $_SESSION['telef'],
                 'contrasena' => $_SESSION['passwd']]
         ];
-
     }
 }
 ?>
@@ -110,36 +113,52 @@ if (isset($_GET['nextpag2'])) {
     <h1>CREATE YOUR ACCOUNT</h1>
     <h2>Step 1</h2>
     <form name="formUser" method="get" class="Inputs" onclick="validateForm()">
+
+        <!-- Un label que si estta mal me mostrara un mensaje de error escrito en script1  -->
+        <label id="errorNombre" style="margin-left: 15%; color: red" for=""> </label><br>
+        <!-- Input de nombre. Si se ha escrito al recargar la página me mostraras los datos anteriores. -->
+
         <label class="errores" id="errorNombre" ></label><br>
-        <input type="text" id="nombre" placeholder="Nombre..." name="nombre" value="<?php echo $_SESSION['fName'] ?>"><br>
+
+        <input type="text" id="nombre" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION['fName'] ?>"><br>
 
         <label class="errores" id="errorApellido"> </label><br>
-        <input type="text" id="apellido" placeholder="Apellidos.." name="apellido"
+        <input type="text" id="apellido" placeholder="Apellidos" name="apellido"
                value="<?php echo $_SESSION['lName'] ?>"><br>
 
         <label class="errores" id="errorCorreo"> </label><br>
-        <input type="email" id="correo" placeholder="Email..." name="correo" value="<?php echo $_SESSION['email'] ?>"><br>
+        <input type="email" id="correo" placeholder="Email" name="correo" value="<?php echo $_SESSION['email'] ?>"><br>
 
         <label class="errores" id="errorTelef" > </label><br>
-        <input type="text" id="telefono" placeholder="Teléfono..." name="telefono"
+        <input type="text" id="telefono" placeholder="Teléfono" name="telefono"
                value="<?php echo $_SESSION['telef'] ?>"><br>
 
         <label class="errores" id="errorContraPart1"> </label><br>
         <label class="errores" id="errorContraPart2"> </label><br>
-        <input type="password" id="contrasena" placeholder="Contraseña..." name="contrasena"
+        <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena"
                value="<?php echo $_SESSION['passwd'] ?>"><br>
 
         <label class="errores" id="errorConfContra" > </label><br>
-        <input type="password" id="confContrasena" placeholder="Confirmar Contraseña..." name="confContrasena"
+        <input type="password" id="confContrasena" placeholder="Confirmar Contraseña" name="confContrasena"
                value="<?php echo $_SESSION['confPasswd'] ?>"><br>
+
+
+        <input class="Next" type="submit" value="Next" name="nextpag2" style="cursor: pointer">
+    </form>
+    <!--  Boton para reiniciar la sesión -->
+    <form name="reiniciar">
+        <input class="Next" type="submit" value="Reset" name="reiniciar" style="cursor: pointer; margin-left: 40%">
+
         <input class="Next" type="submit" value="Comprobar" name="nextpag2" style="width: 20%; margin-left: 24%">
         <form name="reiniciar">
             <input class="Next" type="submit" value="Reset" name="reiniciar" style="width: 20%;margin-left: 10%">
-            <a href="page2.php?id=<?php echo 0 ?>" id="next" class="Next" style=";padding:2%;  margin-left: 43%;visibility: hidden;">Next</a>
+            <a href="page2.php?id=<?php echo 0 ?>" id="next" class="Next"  value="Reset" style=";padding:2%;  margin-left: 43%;visibility: hidden;">Next</a>
         </form>
+
     </form>
 
 
 </div>
 </body>
 </html>
+
